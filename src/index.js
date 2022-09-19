@@ -1,5 +1,4 @@
 import debounce from 'lodash.debounce';
-import { Notify } from 'notiflix/build/notiflix-notify-aio';
 import getCountryByName from './js/getCountryByName';
 import { DEBOUNCE_DELAY } from './constants';
 
