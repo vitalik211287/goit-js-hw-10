@@ -1,0 +1,16 @@
+[user]
+	email = vitalik211287@gmail.com
+	name = Vitalik Poliakov
+[alias]
+	co = checkout
+	ci = commit
+	st = status
+	br = branch
+	hist = log --pretty=format:'%h %ad | %s%d [%an]' --graph --date=short
+[credential "github.com"]
+	interactive = auto
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
