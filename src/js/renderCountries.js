@@ -29,14 +29,11 @@ function renderCountryData([data]) {
           <span>${stringLanguages}</span>
        </p>
 `;
-  console.log(data);
-  // console.log(countryUl.insertAdjacentHTML('afterbegin', htmlUlString));
   countryInfoEl.innerHTML = htmlString;
- countryUl.innerHTML = "";
+  countryUl.innerHTML = '';
 }
 
 function renderCountryList(data) {
-  console.log(data, 'lfnf');
   const htmlUlString = data
     .map(({ name: { official: officialName }, flags: { svg: flagSvg } }) => {
       return `
@@ -48,10 +45,11 @@ function renderCountryList(data) {
     })
     .join(' ');
 
-  // countryUl.insertAdjacentHTML('afterbegin', htmlUlString);
   countryUl.innerHTML = htmlUlString;
-    countryInfoEl.innerHTML = "";
+  countryInfoEl.innerHTML = '';
 }
-
-export { renderCountryData };
-export { renderCountryList };
+function clearEl() {
+  countryInfoEl.innerHTML = '';
+  countryUl.innerHTML = '';
+}
+export { renderCountryData, renderCountryList, clearEl };

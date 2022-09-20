@@ -27,10 +27,7 @@ function getCountryByName(name) {
         renderCountryData(data);
         return;
       }
-
       renderCountryList(data);
-
-      console.log(data);
     })
     .catch(error => {
       Notify.failure(error.message);
