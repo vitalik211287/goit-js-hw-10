@@ -1,6 +1,11 @@
-import { API_URL, API_URL_PARAMS, MANY_MATCHES_MESSAGE, NOT_FOUND_MESSAGE } from '../constants';
+import {
+  API_URL,
+  API_URL_PARAMS,
+  MANY_MATCHES_MESSAGE,
+  NOT_FOUND_MESSAGE,
+} from '../constants';
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
-import { renderCountryData } from './renderCountries';
+import { renderCountryData, renderCountryList } from './renderCountries';
 
 function getCountryByName(name) {
   fetch(API_URL + name + API_URL_PARAMS)
@@ -17,9 +22,14 @@ function getCountryByName(name) {
         Notify.info(MANY_MATCHES_MESSAGE);
         return;
       }
-      if(data.length === 1){
-        renderCountryData(data)
+
+      if (data.length === 1) {
+        renderCountryData(data);
+        return;
       }
+
+      renderCountryList(data);
+
       console.log(data);
     })
     .catch(error => {
