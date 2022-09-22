@@ -52,4 +52,5 @@ function clearEl() {
   countryInfoEl.innerHTML = '';
   countryUl.innerHTML = '';
 }
+
 export { renderCountryData, renderCountryList, clearEl };
