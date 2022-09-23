@@ -3,8 +3,7 @@ import { fetchCountries } from './js/fetchCountries';
 import {
   DEBOUNCE_DELAY,
   MANY_MATCHES_MESSAGE,
-  NOT_FOUND_MESSAGE,
-} from './constants';
+npm} from './constants';
 import {
   clearEl,
   renderCountryData,
@@ -26,15 +25,7 @@ function inputHandler(e) {
   }
 
   fetchCountries(inputValue)
-    .then(response => {
-      if (!response.ok) {
-        throw new Error(
-          response.status === 404 ? NOT_FOUND_MESSAGE : response.statusText
-        );
-      }
-
-      return response.json();
-    })
+    
     .then(data => {
       if (data.length > 10) {
         Notify.info(MANY_MATCHES_MESSAGE);
