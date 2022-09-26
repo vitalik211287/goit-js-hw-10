@@ -29,6 +29,7 @@ function inputHandler(e) {
     .then(data => {
       if (data.length > 10) {
         Notify.info(MANY_MATCHES_MESSAGE);
+        clearEl()
         return;
       }
 
@@ -40,5 +41,6 @@ function inputHandler(e) {
     })
     .catch(error => {
       Notify.failure(error.message);
+      clearEl()
     });
 }

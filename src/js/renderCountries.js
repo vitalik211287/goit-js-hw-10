@@ -29,8 +29,8 @@ function renderCountryData([data]) {
           <span>${stringLanguages}</span>
        </p>
 `;
+  clearEl();
   countryInfoEl.innerHTML = htmlString;
-  countryUl.innerHTML = '';
 }
 
 function renderCountryList(data) {
@@ -44,10 +44,10 @@ function renderCountryList(data) {
         `;
     })
     .join(' ');
-
+  clearEl();
   countryUl.innerHTML = htmlUlString;
-  countryInfoEl.innerHTML = '';
 }
+
 function clearEl() {
   countryInfoEl.innerHTML = '';
   countryUl.innerHTML = '';
